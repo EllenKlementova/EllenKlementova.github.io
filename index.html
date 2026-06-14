@@ -7,10 +7,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231C1C1A'/><text y='68' x='50' text-anchor='middle' font-family='Georgia,serif' font-size='38' fill='%23F7F5F2'>EK</text></svg>" />
+  <link rel="icon" type="image/png" href="favicon.png" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -554,19 +553,34 @@
   <script>
     gsap.registerPlugin(ScrollTrigger);
 
-    // ── Lenis smooth scroll ──
-    const lenis = new (window.Lenis || class {
-      constructor(o){this.options=o;}
-      raf(t){}
-      on(){}
-      scrollTo(t,o){const top=t.getBoundingClientRect().top+window.scrollY;window.scrollTo({top,behavior:'smooth'});}
-    })({ duration: 1.4, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smooth: true });
+    // ── Pure JS inertia smooth scroll ──
+    let scrollTarget = window.scrollY;
+    let scrollCurrent = window.scrollY;
+    let scrolling = false;
 
-    function lenisRaf(time) { lenis.raf(time); requestAnimationFrame(lenisRaf); }
-    requestAnimationFrame(lenisRaf);
+    function smoothScroll() {
+      scrollCurrent += (scrollTarget - scrollCurrent) * 0.07;
+      if (Math.abs(scrollTarget - scrollCurrent) < 0.5) {
+        scrollCurrent = scrollTarget;
+        scrolling = false;
+        return;
+      }
+      window.scrollTo(0, scrollCurrent);
+      requestAnimationFrame(smoothScroll);
+    }
 
-    gsap.ticker.add(time => { lenis.raf(time * 1000); });
-    gsap.ticker.lagSmoothing(0);
+    window.addEventListener('wheel', e => {
+      e.preventDefault();
+      scrollTarget = Math.max(0, Math.min(
+        document.documentElement.scrollHeight - window.innerHeight,
+        scrollTarget + e.deltaY * 1.2
+      ));
+      if (!scrolling) { scrolling = true; smoothScroll(); }
+    }, { passive: false });
+
+    window.addEventListener('scroll', () => {
+      if (!scrolling) scrollTarget = window.scrollY;
+    }, { passive: true });
 
     // ── Smooth scroll (native + GSAP ScrollTrigger) ──
     // Use a simple JS smooth scroll since Lenis isn't on cdnjs
@@ -720,7 +734,10 @@
       a.addEventListener('click', e => {
         e.preventDefault();
         const target = document.querySelector(a.getAttribute('href'));
-        if (target) lenis.scrollTo(target, { duration: 1.4, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+        if (target) {
+          scrollTarget = target.getBoundingClientRect().top + window.scrollY;
+          if (!scrolling) { scrolling = true; smoothScroll(); }
+        }
       });
     });
 
