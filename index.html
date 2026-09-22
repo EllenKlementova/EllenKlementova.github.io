@@ -21,8 +21,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png?v=3">
-  <link rel="stylesheet" href="style.css">
-  <script src="site.js" defer></script>
+  <link rel="stylesheet" href="style.css?v=3">
+  <script src="site.js?v=3" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#obsah">Přeskočit na obsah</a>
@@ -31,6 +31,7 @@
     <a class="wordmark" href="#top" aria-label="Ellen Klementová — úvod">EK<span>.</span></a>
     <nav aria-label="Hlavní navigace">
       <a href="#projekty">Projekty</a>
+      <a href="#fotografie">Fotografie</a>
       <a href="#o-mne">O mně</a>
       <a class="nav-contact" href="mailto:klementova.ellen@seznam.cz">Kontakt</a>
     </nav>
@@ -41,7 +42,7 @@
       <div class="hero-copy reveal">
         <p class="eyebrow">Grafická designérka · Praha</p>
         <h1>Ellen<br><em>Klementová</em></h1>
-        <p class="hero-lead">Vizuální komunikace pro značky, kampaně a kulturní projekty — od prvního konceptu po výstupy pro digitál i tisk.</p>
+        <p class="hero-lead">Grafický design, produktová fotografie a postprodukce. Od vlastního snímku po vizuální komunikaci pro digitál i tisk.</p>
         <div class="hero-actions">
           <a class="button button-dark" href="#projekty">Prohlédnout práci</a>
           <a class="text-link" href="mailto:klementova.ellen@seznam.cz">Napsat e-mail <span aria-hidden="true">↗</span></a>
@@ -49,13 +50,13 @@
       </div>
 
       <div class="hero-art reveal" aria-label="Ukázky vybraných projektů">
-        <a class="hero-card hero-card-main" href="furiosa.html">
-          <img src="img/projects/furiosa-1-plus-1.jpg" alt="Kreativa kampaně Furiosa 1+1 Free" width="1080" height="1350">
-          <span>Furiosa · campaign case study</span>
+        <a class="hero-card hero-card-main hero-card-food" href="makronky.html">
+          <img src="img/photography/makronky-kamen.jpg" alt="Vlastní fotografie makronek na kamenných deskách" width="1200" height="1800" fetchpriority="high">
+          <span>Makronky · vlastní fotografie</span>
         </a>
-        <a class="hero-card hero-card-small" href="oktagon.html">
-          <img src="img/projects/oktagon-10-let.jpg" alt="Plakát Oktagon 10 let" width="1108" height="1917">
-          <span>Oktagon · poster concept</span>
+        <a class="hero-card hero-card-small" href="furiosa.html">
+          <img src="img/projects/furiosa-1-plus-1.jpg" alt="Kreativa kampaně Furiosa 1+1 Free" width="1080" height="1350">
+          <span>Furiosa · koncept kampaně</span>
         </a>
       </div>
     </section>
@@ -104,40 +105,121 @@
       </article>
     </section>
 
-    <section class="archive-section" aria-labelledby="archiv-heading">
+    <section class="photography-section" id="fotografie" aria-labelledby="photography-heading">
+      <div class="shell">
+        <div class="section-intro reveal">
+          <p class="eyebrow">Vlastní fotografie</p>
+          <h2 id="photography-heading">Světlo. Detail.<br><em>Vlastní pohled.</em></h2>
+        </div>
+        <div class="photo-project-grid">
+          <article class="photo-project reveal">
+            <a class="photo-project-image photo-project-food" href="makronky.html" aria-label="Prohlédnout projekt Makronky">
+              <img src="img/photography/makronky-limetka.jpg" alt="Makronky s limetkou na světlém talíři" loading="lazy" width="1200" height="1800">
+              <span class="project-index">03</span>
+              <span class="photo-project-open" aria-hidden="true">↗</span>
+            </a>
+            <div class="photo-project-copy">
+              <p class="project-meta">Produktová fotografie & postprodukce</p>
+              <h3><a href="makronky.html">Makronky</a></h3>
+              <p>Barva, textura a detail v autorském výběru produktových snímků. Vlastní fotografie a finální obrazové zpracování.</p>
+              <a class="project-link" href="makronky.html">Prohlédnout fotografie <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="photo-project photo-project-offset reveal">
+            <a class="photo-project-image photo-project-glass" href="rad-a-odraz.html" aria-label="Prohlédnout fotografický výběr Řád a odraz">
+              <img src="img/photography/sklo-cervena.jpg" alt="Sklenice s červeným prvkem a průsvity světla" loading="lazy" width="1363" height="1800">
+              <span class="project-index">04</span>
+              <span class="photo-project-open" aria-hidden="true">↗</span>
+            </a>
+            <div class="photo-project-copy">
+              <p class="project-meta">Zátiší & fotografická studie</p>
+              <h3><a href="rad-a-odraz.html">Řád a odraz</a></h3>
+              <p>Šachy a sklo. Výběr fotografií propojený geometrií, stíny a odrazy — od pravidelné struktury po barevný akcent.</p>
+              <a class="project-link" href="rad-a-odraz.html">Prohlédnout fotografie <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="archive-section" id="archiv" aria-labelledby="archiv-heading">
       <div class="shell">
         <div class="archive-heading reveal">
           <div>
             <p class="eyebrow">Výběr z archivu</p>
             <h2 id="archiv-heading">Plakáty a vizuální identita</h2>
           </div>
-          <p>Hudební a výstavní plakáty doplňuje návrh loga a vizuální identity Atrio.</p>
+          <p>Hudební a výstavní plakáty doplňuje návrh loga Atrio. Po rozkliknutí najdete celý vizuál i krátký komentář k jeho zpracování.</p>
         </div>
 
         <div class="archive-grid reveal">
-          <button class="archive-item archive-tall" type="button" data-lightbox="img/absolutno.png" data-alt="Výstavní plakát Absolutno">
-            <img src="img/absolutno.png" alt="Výstavní plakát Absolutno" loading="lazy">
+          <button class="archive-item" type="button" data-lightbox="img/absolutno.png" data-alt="Výstavní plakát Absolutno" data-project-detail="detail-absolutno" aria-label="Prohlédnout plakát Absolutno a jeho popis">
+            <img src="img/absolutno.png" alt="Výstavní plakát Absolutno" width="595" height="843" loading="lazy">
             <span><b>Absolutno</b><small>Výstavní plakát</small></span>
           </button>
-          <button class="archive-item" type="button" data-lightbox="img/plakat-aron.jpg" data-alt="Koncertní plakát Arón Piper">
-            <img src="img/plakat-aron.jpg" alt="Koncertní plakát Arón Piper" loading="lazy">
+          <button class="archive-item" type="button" data-lightbox="img/plakat-aron.jpg" data-alt="Koncertní plakát Arón Piper" data-project-detail="detail-aron" aria-label="Prohlédnout plakát Arón Piper a jeho popis">
+            <img src="img/plakat-aron.jpg" alt="Koncertní plakát Arón Piper" width="656" height="926" loading="lazy">
             <span><b>Arón Piper</b><small>Koncertní plakát</small></span>
           </button>
-          <button class="archive-item" type="button" data-lightbox="img/plakat-calin.jpg" data-alt="Hudební plakát Calin Svědomí">
-            <img src="img/plakat-calin.jpg" alt="Hudební plakát Calin Svědomí" loading="lazy">
+          <button class="archive-item" type="button" data-lightbox="img/plakat-calin.jpg" data-alt="Hudební plakát Calin Svědomí" data-project-detail="detail-calin" aria-label="Prohlédnout plakát Calin — Svědomí a jeho popis">
+            <img src="img/plakat-calin.jpg" alt="Hudební plakát Calin Svědomí" width="707" height="1000" loading="lazy">
             <span><b>Calin — Svědomí</b><small>Hudební plakát</small></span>
           </button>
-          <button class="archive-item" type="button" data-lightbox="img/plakat-hindhion.jpg" data-alt="Hudební plakát Hindhion">
-            <img src="img/plakat-hindhion.jpg" alt="Hudební plakát Hindhion" loading="lazy">
+          <button class="archive-item" type="button" data-lightbox="img/plakat-hindhion.jpg" data-alt="Hudební plakát Hindhion" data-project-detail="detail-hindhion" aria-label="Prohlédnout plakát Hindhion a jeho popis">
+            <img src="img/plakat-hindhion.jpg" alt="Hudební plakát Hindhion" width="599" height="835" loading="lazy">
             <span><b>Hindhion</b><small>Hudební plakát</small></span>
           </button>
-          <button class="archive-item archive-wide" type="button" data-lightbox="img/logo-atrio.jpg" data-alt="Logo Atrio">
-            <img src="img/logo-atrio.jpg" alt="Logo Atrio" loading="lazy">
-            <span><b>Atrio</b><small>Logo & vizuální identita</small></span>
-          </button>
         </div>
+
+        <article class="archive-identity reveal">
+          <button class="archive-identity-image" type="button" data-lightbox="img/logo-atrio.jpg" data-alt="Logo Atrio" data-project-detail="detail-atrio" aria-label="Prohlédnout logo Atrio a jeho popis">
+            <img src="img/logo-atrio.jpg" alt="Logo Atrio" width="1000" height="667" loading="lazy">
+          </button>
+          <div class="archive-identity-copy">
+            <p class="eyebrow">Návrh loga</p>
+            <h3>Atrio</h3>
+            <p>Geometrická konstrukce písmen v kruhu, doplněná volně psaným názvem. Černobílý znak postavený na kontrastu přesných linií a měkkého rukopisu.</p>
+            <button class="archive-detail-link" type="button" data-lightbox="img/logo-atrio.jpg" data-alt="Logo Atrio" data-project-detail="detail-atrio">Prohlédnout návrh <span aria-hidden="true">↗</span></button>
+          </div>
+        </article>
       </div>
     </section>
+
+    <template id="detail-absolutno">
+      <p class="eyebrow">Výstavní plakát</p>
+      <h2 id="lightbox-title">Absolutno</h2>
+      <p>Černobílá fotografie rozlehlého prostoru se potkává s jemnou typografií a velkými rozestupy mezi písmeny. Klidnou kompozici narušují detaily místa — v souladu s podtitulem „neklid uprostřed klidného“.</p>
+      <p>Název výstavy zůstává nahoře, praktické informace tvoří spodní vrstvu. Mezi nimi dostává hlavní prostor samotný obraz.</p>
+      <ul class="detail-tags" aria-label="Vizuální prvky"><li>Fotografie a text</li><li>Typografická hierarchie</li><li>Černobílá kompozice</li></ul>
+    </template>
+    <template id="detail-aron">
+      <p class="eyebrow">Koncertní plakát</p>
+      <h2 id="lightbox-title">Arón Piper</h2>
+      <p>Dva portréty propojené kouřem vytvářejí vrstvenou obrazovou kompozici. Rozdílné měřítko postav dává plakátu hloubku a ponechává v popředí výraz interpreta.</p>
+      <p>Svisle vedené jméno rámuje levou hranu. Menší blok s údaji o koncertu ustupuje obrazu a uzavírá kompozici ve spodní části.</p>
+      <ul class="detail-tags" aria-label="Vizuální prvky"><li>Fotografická koláž</li><li>Práce s měřítkem</li><li>Vertikální typografie</li></ul>
+    </template>
+    <template id="detail-calin">
+      <p class="eyebrow">Hudební plakát</p>
+      <h2 id="lightbox-title">Calin — Svědomí</h2>
+      <p>Motiv štíra na světlém pozadí vytváří napětí bez potřeby dalších výrazných barev. Velká prázdná plocha nechává vyniknout jeho siluetě i detailu.</p>
+      <p>Název „Svědomí“ se čte svisle a tvoří protiváhu obrazovému motivu. Jméno interpreta a informace o místě doplňují úspornou kompozici.</p>
+      <ul class="detail-tags" aria-label="Vizuální prvky"><li>Obrazový motiv</li><li>Volný prostor</li><li>Sazba plakátu</li></ul>
+    </template>
+    <template id="detail-hindhion">
+      <p class="eyebrow">Hudební plakát</p>
+      <h2 id="lightbox-title">Hindhion</h2>
+      <p>Červený kruh, pootevřené dveře a dlouhý černý stín vytvářejí výraznou, lehce zneklidňující scénu. Omezená paleta drží pohromadě geometrické tvary i organické struktury při okrajích.</p>
+      <p>Ostrá, lomená typografie v horní části navazuje na hrany dveří a stínu. Plakát tak propojuje obraz a písmo společným vizuálním rytmem.</p>
+      <ul class="detail-tags" aria-label="Vizuální prvky"><li>Barva a kontrast</li><li>Geometrie</li><li>Výrazová typografie</li></ul>
+    </template>
+    <template id="detail-atrio">
+      <p class="eyebrow">Návrh loga</p>
+      <h2 id="lightbox-title">Atrio</h2>
+      <p>Propojená písmena vytvářejí geometrický znak uzavřený do kruhu. Tenké linie a výrazná svislá osa mu dávají pevnou konstrukci.</p>
+      <p>Volně psaný název Atrio tuto pravidelnost uvolňuje. Černobílé provedení soustředí pozornost na tvar, proporce a kontrast obou způsobů písma.</p>
+      <ul class="detail-tags" aria-label="Vizuální prvky"><li>Geometrický znak</li><li>Práce s písmem</li><li>Monochromní provedení</li></ul>
+    </template>
 
     <section class="about-section shell" id="o-mne">
       <div class="about-title reveal">
@@ -145,13 +227,15 @@
         <h2>Cit pro obraz.<br><em>Respekt k zadání.</em></h2>
       </div>
       <div class="about-copy reveal">
-        <p class="about-lead">Jsem juniorní grafická designérka se základem ve fotografii a reklamě. Baví mě hledat vizuální řešení, která mají vlastní náladu a zároveň fungují v reálném formátu.</p>
-        <p>Mám zkušenost s přípravou produktových podkladů pro e-shop i s tvorbou plakátů, brandingem a kampaněmi. Pracuji v Adobe Photoshopu, Illustratoru a InDesignu.</p>
+        <p class="about-lead">Jsem juniorní grafická designérka se základem ve fotografii a reklamě.</p>
+        <p>Baví&nbsp;mě hledat vizuální řešení, která mají vlastní náladu a zároveň fungují v reálném formátu.</p>
+        <p>Mám zkušenost s přípravou produktových podkladů pro e&#8209;shop i s tvorbou plakátů, brandingem a kampaněmi. Věnuji se také vlastní produktové fotografii a postprodukci. Pracuji v Adobe Photoshopu, Illustratoru a InDesignu.</p>
         <ul class="skill-list" aria-label="Dovednosti">
           <li>Adobe Photoshop</li>
           <li>Adobe Illustrator</li>
           <li>Adobe InDesign</li>
-          <li>Fotografie</li>
+          <li>Produktová fotografie</li>
+          <li>Postprodukce</li>
           <li>Tisková grafika</li>
           <li>Digitální obsah</li>
         </ul>
@@ -173,8 +257,11 @@
   </footer>
 
   <dialog class="lightbox" id="lightbox" aria-label="Náhled projektu">
-    <button class="lightbox-close" type="button" aria-label="Zavřít náhled">Zavřít ×</button>
-    <img src="" alt="">
+    <button class="lightbox-close" type="button" aria-label="Zavřít náhled" autofocus>Zavřít ×</button>
+    <div class="lightbox-layout">
+      <div class="lightbox-visual"><img src="" alt=""></div>
+      <div class="lightbox-copy" hidden></div>
+    </div>
   </dialog>
 </body>
 </html>
